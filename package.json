@@ -4,7 +4,12 @@
   "description": "Render ABC music notation in the native VS Code Markdown preview using abcjs.",
   "version": "0.0.1",
   "publisher": "adasdairpan",
+  "icon": "media/icon.png",
   "license": "MIT",
+  "homepage": "https://github.com/alasdairpan/vscode-native-markdown-abc",
+  "bugs": {
+    "url": "https://github.com/alasdairpan/vscode-native-markdown-abc/issues"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/alasdairpan/vscode-native-markdown-abc.git"
@@ -13,7 +18,7 @@
     "vscode": "^1.97.0"
   },
   "categories": [
-    "Markdown",
+    "Programming Languages",
     "Other"
   ],
   "keywords": [
@@ -23,6 +28,7 @@
     "music",
     "notation"
   ],
+  "activationEvents": [],
   "main": "./dist/extension.js",
   "contributes": {
     "markdown.markdownItPlugins": true,
@@ -70,6 +76,7 @@
   "scripts": {
     "check-types": "tsc --noEmit",
     "compile": "npm run check-types && node ./scripts/build.mjs",
+    "package": "node ./scripts/package.mjs",
     "watch": "node ./scripts/build.mjs --watch",
     "vscode:prepublish": "npm run compile"
   },
@@ -77,6 +84,7 @@
     "abcjs": "^6.6.2"
   },
   "devDependencies": {
+    "@vscode/vsce": "^3.2.2",
     "@types/markdown-it": "^14.1.2",
     "@types/node": "^22.13.10",
     "@types/vscode": "^1.97.0",

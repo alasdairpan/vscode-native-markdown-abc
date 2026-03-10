@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256" role="img" aria-labelledby="title desc">
+  <title id="title">Native Markdown ABC icon</title>
+  <desc id="desc">A square icon combining a markdown panel, music staff, and ABC lettering.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#10233f"/>
+      <stop offset="100%" stop-color="#1d4f7a"/>
+    </linearGradient>
+    <linearGradient id="panel" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#18304d"/>
+      <stop offset="100%" stop-color="#12253d"/>
+    </linearGradient>
+  </defs>
+
+  <rect x="12" y="12" width="232" height="232" rx="24" fill="url(#bg)"/>
+  <rect x="28" y="28" width="200" height="200" rx="18" fill="url(#panel)" stroke="#7dd3fc" stroke-opacity="0.25"/>
+
+  <rect x="48" y="50" width="72" height="156" rx="18" fill="#0e1c30" stroke="#f59e0b" stroke-opacity="0.5"/>
+  <path d="M67 95 L87 76 L87 88 L101 88 L101 103 L87 103 L87 115 Z" fill="#f8fafc" fill-opacity="0.92"/>
+  <path d="M101 153 L87 153 L87 168 L67 146 L87 125 L87 139 L101 139 Z" fill="#f8fafc" fill-opacity="0.92"/>
+
+  <g stroke="#e2e8f0" stroke-width="4" stroke-linecap="round" opacity="0.95">
+    <line x1="138" y1="92" x2="204" y2="92"/>
+    <line x1="138" y1="106" x2="204" y2="106"/>
+    <line x1="138" y1="120" x2="204" y2="120"/>
+    <line x1="138" y1="134" x2="204" y2="134"/>
+    <line x1="138" y1="148" x2="204" y2="148"/>
+  </g>
+
+  <g fill="#f8fafc">
+    <ellipse cx="164" cy="132" rx="10" ry="8" transform="rotate(-20 164 132)"/>
+    <rect x="171" y="88" width="5" height="43" rx="2.5"/>
+    <path d="M175 88 C186 92 193 95 202 99 L202 107 C193 103 185 100 175 97 Z"/>
+  </g>
+
+  <text x="139" y="182" fill="#fbbf24" font-family="Avenir Next, Trebuchet MS, Verdana, sans-serif" font-size="34" font-weight="800" letter-spacing="4">ABC</text>
+</svg>

@@ -1,23 +1,23 @@
 # Native Markdown ABC
 
-Render ABC music notation inside the native VS Code Markdown preview using abcjs and the built-in markdown-it extension points.
+Render ABC music notation directly inside VS Code's native Markdown preview.
 
 ## Preview
 
 ![Native Markdown ABC preview](media/abc-preview.png)
 
-The image above shows the source Markdown on one side and the rendered native Markdown preview on the other side.
+Native Markdown ABC turns fenced `abc` code blocks into rendered sheet music while keeping the normal Markdown authoring workflow intact.
 
-## What It Does
+## Why Use It
 
-Native Markdown ABC extends VS Code's built-in Markdown preview so fenced `abc` code blocks render as sheet music.
+- Stay in the built-in Markdown preview instead of switching to a separate editor.
+- Write ABC notation as plain text and see the rendered score immediately.
+- Keep regular code blocks and Markdown content unchanged.
+- Get clear fallback behavior when the ABC source is invalid.
 
-- Uses the native Markdown preview instead of a custom editor.
-- Leaves non-ABC code fences unchanged.
-- Renders notation with abcjs in the preview runtime.
-- Falls back to source text plus parser errors when the ABC is invalid.
+## Usage
 
-## Example
+Write a fenced `abc` block in any Markdown file:
 
 ```md
 ~~~abc
@@ -32,60 +32,55 @@ EBBA B2 EB|B2 AB defg|afe^c dBAF|DEFD E2:|
 ~~~
 ```
 
-## Current Scope
+Then open the standard Markdown preview in VS Code with `Markdown: Open Preview` or `Markdown: Open Preview to the Side`.
+
+## What To Expect
 
 - Supported syntax: fenced `abc` blocks only.
-- Rendering: notation only, no playback controls yet.
-- Target: desktop VS Code with the native Markdown preview.
+- Rendered notation appears inline in the native preview.
+- Non-ABC fences stay as normal code blocks.
+- Invalid ABC stays visible as source text and shows a compact error summary.
 
 ## Settings
 
-- `markdownAbc.enabled`: Enable or disable ABC rendering.
-- `markdownAbc.responsive`: Control whether notation resizes with the preview pane.
-- `markdownAbc.renderClassNames`: Add abcjs CSS class names to rendered SVG output.
+The extension currently exposes three settings:
 
-## Invalid ABC Behavior
+- `markdownAbc.enabled`: Turns ABC rendering on or off.
+- `markdownAbc.responsive`: Controls whether the rendered score resizes with the preview pane.
+- `markdownAbc.renderClassNames`: Adds abcjs CSS class names to the rendered SVG output.
 
-When abcjs reports parser warnings, the extension treats the block as invalid instead of rendering partial notation.
+## Install From VSIX
 
-- The raw ABC source remains visible.
-- The preview shows a compact error summary.
-- Only the first few warning lines are shown, followed by an overflow summary when needed.
+If you are distributing this manually instead of publishing to the Marketplace:
 
-## Development
+1. Build a `.vsix` package locally or download one from GitHub Actions artifacts.
+2. In VS Code, run `Extensions: Install from VSIX...`.
+3. Select the `.vsix` file.
 
-This project follows the standard VS Code extension workflow described in the VS Code extension API documentation.
+## Package Locally
 
 ```sh
 npm install
-npm run watch
+npm run compile
+npm run package
 ```
 
-Then press `F5` in VS Code to launch an Extension Development Host.
+This produces a `.vsix` file in the `artifacts/` directory that can be installed manually.
 
-To test the extension manually:
+## Package In GitHub Actions
 
-1. Open [examples/sample.md](examples/sample.md).
-2. Run `Markdown: Open Preview` or `Markdown: Open Preview to the Side`.
-3. Edit the ABC block and confirm the preview re-renders.
-4. Edit the invalid example and confirm it falls back to source plus compact errors.
+The repository includes a GitHub Actions workflow that builds and packages the extension as a `.vsix` artifact.
 
-## Architecture
+You can use it by:
 
-- The extension host registers a markdown-it plugin.
-- The markdown-it plugin replaces fenced `abc` blocks with placeholder HTML.
-- A preview script finds those placeholders and calls abcjs to render SVG notation.
-- Preview CSS styles both successful renders and fallback error states.
+1. Pushing to `main`.
+2. Pushing a version tag such as `v0.0.2`.
+3. Running the workflow manually from GitHub Actions.
 
-## Planned Next Steps
+After the workflow finishes, download the `.vsix` artifact from the workflow run page.
 
-- Per-block options in the ABC fence info string.
-- Optional strict vs best-effort render mode.
-- Marketplace packaging polish.
-- Playback support as a separate feature slice.
-
-## Limitations
+## Notes
 
 - Fenced `abc` blocks only.
-- Audio playback is not implemented yet.
-- Settings apply on preview creation and refresh.
+- Notation rendering only. Audio playback is not included.
+- Best suited for desktop VS Code with the native Markdown preview.
