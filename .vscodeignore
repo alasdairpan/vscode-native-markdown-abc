@@ -1,8 +1,11 @@
 **/.git/**
+**/.github/**
 **/.vscode/**
 src/**
 scripts/**
 examples/**
 node_modules/**
+.gitignore
 .markdownlint.json
 tsconfig.json
+media/icon.svg
