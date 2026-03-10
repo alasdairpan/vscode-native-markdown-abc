@@ -67,18 +67,6 @@ npm run package
 
 This produces a `.vsix` file in the `artifacts/` directory that can be installed manually.
 
-## Package In GitHub Actions
-
-The repository includes a GitHub Actions workflow that builds and packages the extension as a `.vsix` artifact.
-
-You can use it by:
-
-1. Pushing to `main`.
-2. Pushing a version tag such as `v0.0.2`.
-3. Running the workflow manually from GitHub Actions.
-
-After the workflow finishes, download the `.vsix` artifact from the workflow run page.
-
 ## Notes
 
 - Fenced `abc` blocks only.
