@@ -1,0 +1,8 @@
+**/.git/**
+**/.vscode/**
+src/**
+scripts/**
+examples/**
+node_modules/**
+.markdownlint.json
+tsconfig.json

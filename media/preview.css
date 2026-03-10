@@ -1,0 +1,58 @@
+.markdown-abc {
+  margin: 1.25rem 0;
+  padding: 0.9rem 1rem;
+  border: 1px solid var(--vscode-panel-border);
+  border-radius: 10px;
+  background: var(--vscode-textCodeBlock-background);
+}
+
+.markdown-abc__paper {
+  overflow-x: auto;
+}
+
+.markdown-abc__paper svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.markdown-abc__fallback.is-hidden {
+  display: none;
+}
+
+.markdown-abc__status.is-hidden {
+  display: none;
+}
+
+.markdown-abc__status {
+  margin-bottom: 0.65rem;
+  color: var(--vscode-descriptionForeground);
+  font-size: 0.9rem;
+}
+
+.markdown-abc__status.is-error {
+  color: var(--vscode-errorForeground);
+}
+
+.markdown-abc__source {
+  margin: 0;
+  white-space: pre-wrap;
+}
+
+.markdown-abc__error {
+  margin-top: 0.75rem;
+  color: var(--vscode-errorForeground);
+  line-height: 1.45;
+}
+
+.markdown-abc__error-title {
+  font-weight: 600;
+}
+
+.markdown-abc__error-list {
+  margin-top: 0.5rem;
+}
+
+.markdown-abc__error-line + .markdown-abc__error-line {
+  margin-top: 0.35rem;
+}
